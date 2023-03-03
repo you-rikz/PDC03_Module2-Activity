@@ -10,20 +10,36 @@
                       RefreshControlColor="Red">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        
-                        
 
                         <ImageCell ImageSource="{Binding profileimage}"
                                    Text="{Binding DisplayName}"
                                    Detail="{Binding Position}"
                                    TextColor="Blue"
                                    DetailColor="Orange"></ImageCell>
-                                  
 
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
+
+            <ListView x:Name="lstt"
+                ItemsSource="{Binding Employees}"
+                      IsPullToRefreshEnabled="True"
+                      RefreshControlColor="Red">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+
+                        <TextCell  Text="{Binding DisplayName}"
+                                   Detail="{Binding Position}"
+                                   TextColor="Blue"
+                                   DetailColor="Orange"></TextCell>
+                                  
+
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
